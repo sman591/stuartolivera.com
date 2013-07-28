@@ -4,10 +4,9 @@ $().ready(function() {
 
 	$('.social > a').mouseHovers()
 
-	/* Center Content */
+	/* Fancy That Center */
 
-	$('.main').center()
-	$('.panels > div').centerVertically()
+	fancy_that_center('init')
 
 	/* Responsive Text Sizes */
 
@@ -25,11 +24,15 @@ $(window).hashchange(function(){
 	update_panels()
 })
 
-$(window).resize(function() {
+var fancy_that_center = function () {
+
+	if (arguments[0] == 'init')
+		$(window).resize(fancy_that_center)
+
 	$('.panels > div').centerVertically()
-	$('.main .content').css("margin-top", Math.max(0, (($(window).height() - $(inside).outerHeight()) / 2) + 
-                                                $(window).scrollTop()-50) + "px");
-})
+	$('.main .content').centerVertically()
+}
+
 jQuery.fn.mouseHovers = function () {
 	$(this).hover(function() {
 		$(this).clearQueue().animate({
