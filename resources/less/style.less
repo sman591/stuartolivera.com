@@ -15,15 +15,14 @@ a:hover {
 
 .main {
 	display: none;
-	background: -moz-linear-gradient(left, hsla(188,17%,9%,0) 0%, hsla(187,16%,11%,1) 20%, hsla(186,14%,14%,1) 50%, hsla(187,16%,11%,1) 80%, hsla(188,17%,9%,0) 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(188,17%,9%,0)), color-stop(20%,hsla(187,16%,11%,1)), color-stop(50%,hsla(186,14%,14%,1)), color-stop(80%,hsla(187,16%,11%,1)), color-stop(100%,hsla(188,17%,9%,0)));
-	background: -webkit-linear-gradient(left, hsla(188,17%,9%,0) 0%,hsla(187,16%,11%,1) 20%,hsla(186,14%,14%,1) 50%,hsla(187,16%,11%,1) 80%,hsla(188,17%,9%,0) 100%);
-	background: -o-linear-gradient(left, hsla(188,17%,9%,0) 0%,hsla(187,16%,11%,1) 20%,hsla(186,14%,14%,1) 50%,hsla(187,16%,11%,1) 80%,hsla(188,17%,9%,0) 100%);
-	background: -ms-linear-gradient(left, hsla(188,17%,9%,0) 0%,hsla(187,16%,11%,1) 20%,hsla(186,14%,14%,1) 50%,hsla(187,16%,11%,1) 80%,hsla(188,17%,9%,0) 100%);
-	background: linear-gradient(to right, hsla(188,17%,9%,0) 0%,hsla(187,16%,11%,1) 20%,hsla(186,14%,14%,1) 50%,hsla(187,16%,11%,1) 80%,hsla(188,17%,9%,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00141b1c', endColorstr='#00141b1c',GradientType=1 );
+	background: -moz-linear-gradient(left, hsla(189,16%,9%,0) 0%, hsla(188,15%,10%,1) 20%, hsla(187,15%,12%,1) 50%, hsla(188,15%,10%,1) 80%, hsla(189,16%,9%,0) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(189,16%,9%,0)), color-stop(20%,hsla(188,15%,10%,1)), color-stop(50%,hsla(187,15%,12%,1)), color-stop(80%,hsla(188,15%,10%,1)), color-stop(100%,hsla(189,16%,9%,0)));
+	background: -webkit-linear-gradient(left, hsla(189,16%,9%,0) 0%,hsla(188,15%,10%,1) 20%,hsla(187,15%,12%,1) 50%,hsla(188,15%,10%,1) 80%,hsla(189,16%,9%,0) 100%);
+	background: -o-linear-gradient(left, hsla(189,16%,9%,0) 0%,hsla(188,15%,10%,1) 20%,hsla(187,15%,12%,1) 50%,hsla(188,15%,10%,1) 80%,hsla(189,16%,9%,0) 100%);
+	background: -ms-linear-gradient(left, hsla(189,16%,9%,0) 0%,hsla(188,15%,10%,1) 20%,hsla(187,15%,12%,1) 50%,hsla(188,15%,10%,1) 80%,hsla(189,16%,9%,0) 100%);
+	background: linear-gradient(to right, hsla(189,16%,9%,0) 0%,hsla(188,15%,10%,1) 20%,hsla(187,15%,12%,1) 50%,hsla(188,15%,10%,1) 80%,hsla(189,16%,9%,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0013191a', endColorstr='#0013191a',GradientType=1 );
 	height: 100%;
-
 }
 
 .main, .panels {
@@ -38,13 +37,13 @@ a:hover {
 
 	h1 {
 		font-size: 100px;
-		line-height: 100px;
+		line-height: 1em;
 		margin-bottom: -3px;
 	}
 
 	h2 {
 		font-size: 42px;
-		line-height: 50px;
+		line-height: 1.2em;
 		font-family: @serifFontFamily;
 		color: @blue;
 		font-weight: normal;
@@ -125,15 +124,27 @@ nav {
 	font-size: 33px;
 }
 
+.stripes {
+	background: url(../images/vertical-stripes.png) repeat;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -50px;
+	z-index: -1;
+	opacity: 0;
+}
+
 .panels {
 
 	> div {
-		display: none;
+		opacity: 0;
 	}
 
 	span {
 		color: @blue;
-}
+	}
 
 }
 
@@ -141,6 +152,19 @@ nav {
 	width: 217px;
 	height: 217px;
 	margin: 20px;
+}
+
+@media (min-width:1400px) {
+	.container-fluid {
+		margin:0 auto;width:1360px;
+	}
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+	.nav li {
+		font-size: 24px;
+		padding: 6px;
+	}
 }
 
 /* Mixins */

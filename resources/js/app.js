@@ -1,7 +1,6 @@
 $().ready(function() {
 
-	$('.main').center()
-	$('.panels > div').centerVertically()
+	/* Social Link Mouse Hovers */
 
 	$('.social > a').hover(function() {
 		$(this).clearQueue().animate({
@@ -13,14 +12,30 @@ $().ready(function() {
 		}, 200)
 	});
 
+	/* Center Content */
 
-	$('.main').delay(400).introduce()
+	$('.main').center()
+	$('.panels > div').centerVertically()
+
+	/* Responsive Text Sizes */
+
+	$('.main h1').fitText(0.7, { maxFontSize: '100px' })
+	$('.main h2').fitText(1.7, { maxFontSize: '42px' })
+
+	/* Page Hash Controller */
+
+	init_hash_controller()
 
 })
 
+$(window).hashchange(function(){
+	update_panels()
+})
+
 $(window).resize(function() {
-	$('.main').center()
 	$('.panels > div').centerVertically()
+	$('.main .content').css("margin-top", Math.max(0, (($(window).height() - $(inside).outerHeight()) / 2) + 
+                                                $(window).scrollTop()-50) + "px");
 })
 
 
@@ -44,26 +59,98 @@ jQuery.fn.centerVertically = function () {
 }
 
 
-jQuery.fn.introduce = function() {
+jQuery.fn.introduce = function(act) {
 
-	console.log('introduce');
+	if (act == 'affix') {
 
-	this.hide()
+		$('.main').animate({
+			left: 0
+		}, 500)
 
-	content = this.find('.content')
+	}
+	else {
 
-	this.css('overflow', 'hidden')
-	margin_top = content.css('margin-top');
-	content.css('margin-top', $(window).height());
+		this.hide()
 
-	this.fadeIn(1000)
+		content = this.find('.content')
 
-	content.animate({
-		'margin-top' : margin_top,
-		'opacity' : 1
-	}, 1200, function() {
-		that.css('overflow', 'auto')
+		$('body').css('overflow', 'hidden')
+		margin_top = content.css('margin-top');
+		content.css('margin-top', $(window).height());
+
+		this.fadeIn(1000)
+
+		that = this
+
+		content.animate({
+			'margin-top' : margin_top,
+			'opacity' : 1
+		}, 1200)
+
+		return this;
+
+	}
+
+}
+
+reset_panels = function() {
+
+	$('.panels > div:visible').animate({
+		opacity: 0,
+		left: $(window).width()
+	}, 800)
+
+	$('.stripes').animate({
+		opacity: 0,
+		top: $(window).height()
 	})
 
-	return this;
+}
+
+init_hash_controller = function() {
+
+	window.lastHash = '';
+
+	update_panels();
+
+}
+
+update_panels = function() {
+
+	hash = window.location.hash
+
+	$('body').css('overflow', 'hidden')
+
+	if (hash !== '' && hash !== '#home') {
+		$('.main').introduce('affix')
+	}
+
+	switch (hash) {
+
+		case '#about':
+
+			$('.stripes').animate({
+				opacity: 1,
+				top: 0
+			}, 1500)
+
+			$('.panels .about').delay(500).animate({
+				left: ($(window).width() / 2),
+				opacity: 1
+			}, 1500)
+
+		break;
+
+		default:
+
+			reset_panels();
+
+			$('.main').introduce();
+
+		break;
+
+	}
+
+	window.lastHash = hash;
+
 }
