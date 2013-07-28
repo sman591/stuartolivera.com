@@ -2,15 +2,7 @@ $().ready(function() {
 
 	/* Social Link Mouse Hovers */
 
-	$('.social > a').hover(function() {
-		$(this).clearQueue().animate({
-			opacity: 0.6
-		}, 100)
-	}, function() {
-		$(this).animate({
-			opacity: 1
-		}, 200)
-	});
+	$('.social > a').mouseHovers()
 
 	/* Center Content */
 
@@ -37,6 +29,17 @@ $(window).resize(function() {
 	$('.main .content').css("margin-top", Math.max(0, (($(window).height() - $(inside).outerHeight()) / 2) + 
                                                 $(window).scrollTop()-50) + "px");
 })
+jQuery.fn.mouseHovers = function () {
+	$(this).hover(function() {
+		$(this).clearQueue().animate({
+			opacity: 0.6
+		}, 100)
+	}, function() {
+		$(this).animate({
+			opacity: 1
+		}, 200)
+	});
+}
 
 
 jQuery.fn.center = function (callback) {
