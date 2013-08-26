@@ -1,0 +1,141 @@
+!!! 5
+
+-# paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+-# <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+-# <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+-# <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+-# <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+%html.no-js{:lang => "en"}
+
+    %head
+
+        -# ==========================================================================
+        -# Head
+        -# ==========================================================================
+
+        %meta{:charset => "utf-8"}
+
+        %title Stuart Olivera - Web Designer & Developer
+        %meta{:name => "description", :content => ""}
+        -# %meta{:name => "keywords", :content => ""}
+        -# %meta{:name => "author", :content => ""}
+
+        -# Mobile
+        -# ==========================================================================
+
+        %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+
+        -# Favicon
+        -# ==========================================================================
+
+        %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
+
+        -# CSS
+        -# ==========================================================================
+
+        %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=PT+Sans:400,700|Coustard"}
+        %link{:rel => "stylesheet", :href => "css/screen.css"}
+
+        -# IE Fixes
+        -# ==========================================================================
+
+        -#
+        -# Use HTML5 Shim polyfill if not using Modernizr
+        -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
+        -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
+        -#
+
+        /[if (lt IE 9) & (!IEMobile)]
+            -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
+            %script{:src => "javascript/libs/selectivizr.min.js"}
+            -# %link{:rel => "stylesheet", :href => "resources/css/oldie.css"}
+            -# %link{:rel => "stylesheet", :href => "resources/css/ie8.css"}
+
+    %body
+
+        -# ==========================================================================
+        -# Content
+        -# ==========================================================================
+
+        .container-fluid
+
+            .row-fluid
+                .span6.main
+                    .content
+                        .name
+                            %h1 Stuart Olivera
+                            %h2 Designer & Developer
+
+                        .social
+                            %a.social32.github_icon32{:href => "http://github.com/sman591"}
+                            %a.social32.stackoverflow_icon32{:href => "http://stackoverflow.com/users/237098/sman591"}
+                            %a.social32.linkedin_icon32{:href => "http://linkedin.com/in/stuartolivera"}
+                            %a.social32.behance_icon32{:href => "http://www.behance.net/stuartolivera"}
+                            %a.social32.twitter_icon32{:href => "http://twitter.com/stuartolivera"}
+                            %a.social32.flickr_icon32{:href => "http://www.flickr.com/photos/stuartolivera/"}
+                            %a.social32.facebook_icon32{:href => "http://facebook.com/stuartolivera"}
+
+                        %nav
+                            .nav
+                                %li.active
+                                    %a{:href => "#home"} Home
+                                %li -
+                                %li
+                                    %a{:href => "#about"} About
+                                %li -
+                                %li
+                                    %a{:href => "#portfolio"} Portfolio
+
+                            .nav
+                                %li
+                                    %a{:href => "#services"} Services
+                                %li -
+                                %li
+                                    %a{:href => "#contact"} Contact
+
+            .row-fluid
+
+                .span6.offset6.panels
+                    .about
+
+                        %img.headshot{:src => "resources/images/stuart.jpg"}
+
+                        %p Hey, I'm <span>Stuart</span>! I'm 17 years old and love to <span>design</span> & <span>build</span> websites. I've had 6+ years of experience with websites, along with 5+ yeas of experience with commercial work.
+
+                        %p Primarily, I work with <span>PHP</span>, <span>MySQL</span>, <span>JavaScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>and HTML</span>, <span>but am also familiar with Ruby</span>, <span>Rails</span>, <span>Backbone.js</span>, <span>LESS</span>, and <span>SASS</span>.
+
+                        %p I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks english can request my <a href="#services">services</a>.
+
+        .stripes
+            %br/
+
+
+        -# JS
+        -# ==========================================================================
+
+        -# jQuery
+
+        %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+        :javascript
+            window.jQuery || document.write('<script src="javascript/jquery-1.10.1.min.js"><\/script>')
+
+        %script{:src => "javascript/jquery.ba-hashchange.min.js"}
+        %script{:src => "javascript/jquery.fittext.js"}
+
+        -# Custom JS
+
+        %script{:src => "javascript/app.js"}
+
+        -#
+        -# Asynchronous Google Analytics
+        -# Change UA-XXXXX-X to be your site's ID
+        -# mathiasbynens.be/notes/async-analytics-snippet
+        -#
+
+        -# :javascript
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
