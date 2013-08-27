@@ -43,7 +43,6 @@
 
     padding_top = Math.max(0, (($(window).height() - $(this).height()) / 2) - 50);
     padding_bottom = Math.max(0, $(window).height() - $(this).height() - padding_top - $(window).scrollTop() - 50);
-    console.log(padding_top);
     this.css("padding-top", padding_top + "px");
     this.css("padding-bottom", padding_bottom + "px");
     return this;

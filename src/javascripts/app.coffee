@@ -19,7 +19,6 @@ fancy_that_center = ->
   if (arguments[0] == 'init')
     $(window).resize(fancy_that_center)
 
-  # $('.panels > .about').centerVertically()
   $('.panels > div').each ->
     $(this).centerVertically()
   $('.main .content').centerVertically()
@@ -37,8 +36,6 @@ jQuery.fn.mouseHovers = ->
 jQuery.fn.centerVertically = ->
     padding_top = Math.max(0, (($(window).height() - $(this).height()) / 2)  - 50)
     padding_bottom = Math.max(0, $(window).height() - $(this).height() - padding_top - $(window).scrollTop() - 50)
-
-    console.log padding_top
 
     this.css("padding-top", padding_top + "px")
     this.css("padding-bottom", padding_bottom + "px")
