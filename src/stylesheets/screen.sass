@@ -1,9 +1,178 @@
-/*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+$blue: #00bcde
+$green: #00bf9c
 
-@import compass/reset
+$linkColor:             $green
+
+$btnPrimaryBackground: #f00
+$serifFontFamily: "Coustard", serif
+
 @import bootstrap
 @import bootstrap-responsive
+
+body
+  background: url(../images/pw_maze_black.png) repeat
+  /* Temporary until Bootstrap comes in */
+  color: #fff
+  font-family: PT Sans
+
+::selection
+  background: #E29700 /* Safari */
+
+::-moz-selection
+  background: #ffa500 /* Firefox */
+
+p
+  line-height: 1.3em
+  margin-bottom: 1em
+
+a:hover
+  text-decoration: none
+
+span
+  color: $blue
+
+html, body, .stripes
+  height: 100%
+
+.stripes
+  background: url(../images/vertical-stripes.png) repeat
+  width: 50%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 50%
+  z-index: -1
+  // opacity: 0
+
+.container
+  height: 100%
+
+.main, .panels
+  text-align: center
+  height: 100%
+
+.main
+  position: fixed
+  top: 0
+  left: 0
+  width: 50%
+
+.panels
+  position: absolute
+  right: 0
+  width: 50%
+
+  > div
+    padding: 0 7%
+
+.headshot
+  width: 217px
+  height: 217px
+  margin: 20px
+
+.name
+
+  h1
+    font-size: 100px
+    line-height: 1em
+    margin-bottom: -3px
+
+
+  h2
+    font-size: 42px
+    line-height: 1.2em
+    font-family: $serifFontFamily
+    color: $blue
+    font-weight: normal
+
+
+.social
+  margin: 30px auto 17px
+
+.social16
+  display: block
+  margin: 5px 3px
+  height: 16px
+  width: 16px
+
+.social32
+  display: inline-block
+  margin: 0 auto
+  height: 32px
+  width: 32px
+  border: 6px solid transparent
+
+.behance_icon32
+  background: url(../images/vector-social-media/32px/behance.png) no-repeat
+
+.email_icon32
+  background: url(../images/vector-social-media/32px/email.png) no-repeat
+
+.facebook_icon32
+  background: url(../images/vector-social-media/32px/facebook.png) no-repeat
+
+.flickr_icon32
+  background: url(../images/vector-social-media/32px/flickr.png) no-repeat
+
+.linkedin_icon32
+  background: url(../images/vector-social-media/32px/linkedin.png) no-repeat
+
+.twitter_icon32
+  background: url(../images/vector-social-media/32px/twitter.png) no-repeat
+
+.wordpress_icon32
+  background: url(../images/vector-social-media/32px/wordpress.png) no-repeat
+
+.github_icon32
+  background: url(../images/vector-social-media/32px/github.png) no-repeat
+
+.stackoverflow_icon32
+  background: url(../images/vector-social-media/32px/stackoverflow.png) no-repeat
+
+nav
+  margin: 0 auto
+
+  .nav:first-child
+    margin-bottom: 4px
+
+
+.nav
+  clear: both
+
+.nav > li > a:hover, .nav > li > a:focus
+  background-color: transparent
+
+.nav li
+  display: inline-block
+  margin: 0 auto
+  padding: 10px
+  font-size: 33px
+
+@media (min-width: 1400px)
+  .main
+    width: 700px
+    right: 50%
+    left: auto
+
+  .panels
+    width: 700px
+    right: auto
+    left: 50%
+
+
+@media (max-width: 979px) and (min-width: 768px)
+  .nav li
+    font-size: 24px
+    padding: 6px
+
+@media (max-width: 767px)
+  .container
+    > div
+      position: relative
+      width: auto
+
+  .stripes
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
