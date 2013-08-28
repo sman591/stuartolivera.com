@@ -3,140 +3,190 @@
 -# paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 
 -# <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
--# <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
--# <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+-# <!--[if IE 7]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+-# <!--[if IE 8]>  <html class="no-js lt-ie9" lang="en"> <![endif]-->
 -# <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 %html.no-js{:lang => "en"}
+  %head
 
-    %head
+    -# ==========================================================================
+    -# Head
+    -# ==========================================================================
 
-        -# ==========================================================================
-        -# Head
-        -# ==========================================================================
+    %meta{:charset => "utf-8"}
 
-        %meta{:charset => "utf-8"}
+    %title Stuart Olivera - Web Designer & Developer
+    %meta{:name => "description", :content => ""}
+    -# %meta{:name => "keywords", :content => ""}
+    -# %meta{:name => "author", :content => ""}
 
-        %title Stuart Olivera - Web Designer & Developer
-        %meta{:name => "description", :content => ""}
-        -# %meta{:name => "keywords", :content => ""}
-        -# %meta{:name => "author", :content => ""}
+    -# Mobile
+    -# ==========================================================================
 
-        -# Mobile
-        -# ==========================================================================
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
 
-        %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    -# Favicon
+    -# ==========================================================================
 
-        -# Favicon
-        -# ==========================================================================
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
 
-        %link{:href => "/favicon.ico", :rel => "shortcut icon"}
+    -# CSS
+    -# ==========================================================================
 
-        -# CSS
-        -# ==========================================================================
+    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=PT+Sans:400,700|Coustard"}
+    %link{:rel => "stylesheet", :href => "css/screen.css"}
 
-        %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=PT+Sans:400,700|Coustard"}
-        %link{:rel => "stylesheet", :href => "resources/css/main.css"}
-        -# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "resources/css/widescreen.css"}
+    -# IE Fixes
+    -# ==========================================================================
 
-        -# IE Fixes
-        -# ==========================================================================
+    -#
+    -# Use HTML5 Shim polyfill if not using Modernizr
+    -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
+    -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
+    -#
 
-        -#
-        -# Use HTML5 Shim polyfill if not using Modernizr
-        -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-        -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-        -#
+    /[if (lt IE 9) & (!IEMobile)]
+      -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
+      %script{:src => "javascript/libs/selectivizr.min.js"}
+      -# %link{:rel => "stylesheet", :href => "resources/css/oldie.css"}
+      -# %link{:rel => "stylesheet", :href => "resources/css/ie8.css"}
 
-        -# /[if (lt IE 9) & (!IEMobile)]
-            -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-            %script{:src => "resources/js/libs/selectivizr.min.js"}
-            -# %link{:rel => "stylesheet", :href => "resources/css/oldie.css"}
-            -# %link{:rel => "stylesheet", :href => "resources/css/ie8.css"}
+  %body
 
-    %body
+    -# ==========================================================================
+    -# Content
+    -# ==========================================================================
 
-        -# ==========================================================================
-        -# Content
-        -# ==========================================================================
+    .container
 
-        .container-fluid
+      .main
+        .content
+          .name
+            %h1 Stuart Olivera
+            %h2 Designer & Developer
 
-            .row-fluid
-                .span6.main
-                    .content
-                        .name
-                            %h1 Stuart Olivera
-                            %h2 Designer & Developer
+          .social
+            %a.social32.github_icon32{:href => "http://github.com/sman591"}
+            %a.social32.stackoverflow_icon32{:href => "http://stackoverflow.com/users/237098/sman591"}
+            %a.social32.linkedin_icon32{:href => "http://linkedin.com/in/stuartolivera"}
+            %a.social32.behance_icon32{:href => "http://www.behance.net/stuartolivera"}
+            %a.social32.twitter_icon32{:href => "http://twitter.com/stuartolivera"}
+            %a.social32.flickr_icon32{:href => "http://www.flickr.com/photos/stuartolivera/"}
+            %a.social32.facebook_icon32{:href => "http://facebook.com/stuartolivera"}
 
-                        .social
-                            %a.social32.github_icon32{:href => "http://github.com/sman591"}
-                            %a.social32.stackoverflow_icon32{:href => "http://stackoverflow.com/users/237098/sman591"}
-                            %a.social32.linkedin_icon32{:href => "http://linkedin.com/in/stuartolivera"}
-                            %a.social32.behance_icon32{:href => "http://www.behance.net/stuartolivera"}
-                            %a.social32.twitter_icon32{:href => "http://twitter.com/stuartolivera"}
-                            %a.social32.flickr_icon32{:href => "http://www.flickr.com/photos/stuartolivera/"}
-                            %a.social32.facebook_icon32{:href => "http://facebook.com/stuartolivera"}
+          %nav
+            .nav
+              %li.active
+                %a{:href => "#home"} Home
+              %li -
+              %li
+                %a{:href => "#about"} About
+              %li -
+              %li
+                %a{:href => "#portfolio"} Portfolio
 
-                        %nav
-                            .nav
-                                %li.active
-                                    %a{:href => "#home"} Home
-                                %li -
-                                %li
-                                    %a{:href => "#about"} About
-                                %li -
-                                %li
-                                    %a{:href => "#portfolio"} Portfolio
+            .nav
+              %li
+                %a{:href => "#services"} Services
+              %li -
+              %li
+                %a{:href => "#contact"} Contact
 
-                            .nav
-                                %li
-                                    %a{:href => "#services"} Services
-                                %li -
-                                %li
-                                    %a{:href => "#contact"} Contact
-            
-            .row-fluid
+      .panels
+        #home.home
 
-                .span6.offset6.panels
-                    .about
-                        
-                        %img.headshot{:src => "resources/images/stuart.jpg"}
+        #about.about
 
-                        %p Hey, I'm <span>Stuart</span>! I'm 17 years old and love to <span>design</span> & <span>build</span> websites. I've had 6+ years of experience with websites, along with 5+ yeas of experience with commercial work.
+          %img.headshot{:src => "images/stuart.jpg"}
 
-                        %p Primarily, I work with <span>PHP</span>, <span>MySQL</span>, <span>JavaScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>and HTML</span>, <span>but am also familiar with Ruby</span>, <span>Rails</span>, <span>Backbone.js</span>, <span>LESS</span>, and <span>SASS</span>.
+          %p Hey, I'm <span>Stuart</span>! I'm 17 years old and love to <span>design</span> & <span>build</span> websites. I've had 6+ years of experience with websites, along with 5+ yeas of experience with commercial work.
 
-                        %p I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks english can request my <a href="#services">services</a>.
+          %p I'm familiar with <span>PHP</span>, <span>MySQL</span>, <span>MongoDB</span>, <span>JavaScript</span>, <span>CoffeeScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>HTML</span>, <span>Ruby</span>, <span>Rails</span>, <span>Backbone.js</span>, <span>LESS</span>, and <span>SASS</span>, and continue to learn new languages.
 
-        .stripes
-            %br/
+          %p I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks english can request my <a href="#services">services</a>.
+
+        #portfolio.portfolio
+
+          %p My portfolio can be accessed <a href="http://www.behance.net/stuartolivera">here &raquo;</a>
+
+        #services.services
+
+          %h2 Design
+
+          %p Need a design for your new website? Time to upgrade your existing design? Maybe that new feature you're building just doesn't fit with what you are trying to market? I'm here to help. Whether it be a website, blog, app, or something even better, I can take it to the next level.
+
+          %br/
+
+          %h2 Development
+
+          %p No matter what the purpose or market is, your website deserves to be built flawlessly and efficiently. Blogs, apps, and other websites I build keep a strong focus on the best possible visitor and user experience while maintaining high stability and performance.
+
+        #contact.contact
+
+          %p Looking for my services? Have a question? Just want to chat? Here's the place to do just that.
+
+          %br/
+
+          %form#contactForm.form-horizontal{:action => "contact.php", :method => "post"}
+            .form_user
+              %label{:for => "username"} Username
+              %input{:type => "text", :name=> "username"}
+            .control-group
+              %label.control-label{:for => "contactName"} Name
+              .controls
+                %input#contactName{:type => "text", :name => "name", :placeholder => "Name"}
+            .control-group
+              %label.control-label{:for => "contactEmail"} Email
+              .controls
+                %input#contactEmail{:type => "text", :name => "email", :placeholder => "Email"}
+            .control-group
+              %label.control-label{:for => "contactSubject"} Subject
+              .controls
+                %select#contactSubject{:name => "subject"}
+                  %option Please choose...
+                  %option{:value => "Requesting Services"} Requesting Services
+                  %option{:value => "Requesting Support"} Requesting Support
+                  %option{:value => "I Have A Question"} I Have A Question
+                  %option{:value => "Just Want To Chat"} Just Want To Chat
+                  %option{:value => "Other"} Other
+            .control-group
+              %label.control-label{:for => "contactComments"} Comments
+              .controls
+                %textarea#contactName{:name => "comments", :placeholder => "Comments", :rows => "7"}
+            .control-group
+              .controls
+                %button.btn.btn-primary{:type => "submit"} Send
+
+    .stripes
+      %br/
 
 
-        -# JS
-        -# ==========================================================================
+    -# JS
+    -# ==========================================================================
 
-        -# jQuery
+    -# jQuery
 
-        %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
-        :javascript
-            window.jQuery || document.write('<script src="resources/js/jquery-1.10.1.min.js"><\/script>')
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="javascript/jquery-1.10.1.min.js"><\/script>')
 
-        %script{:src => "resources/js/jquery.ba-hashchange.min.js"}
-        %script{:src => "resources/js/jquery.fittext.js"}
+    %script{:src => "javascript/jquery.ba-hashchange.min.js"}
+    %script{:src => "javascript/jquery.fittext.js"}
+    %script{:src => "javascript/jquery.form.min.js"}
 
-        -# Custom JS
+    -# Custom JS
 
-        %script{:src => "resources/js/app.js"}
+    %script{:src => "javascript/app.js"}
 
-        -#
-        -# Asynchronous Google Analytics
-        -# Change UA-XXXXX-X to be your site's ID
-        -# mathiasbynens.be/notes/async-analytics-snippet
-        -#
+    -#
+    -# Asynchronous Google Analytics
+    -# Change UA-XXXXX-X to be your site's ID
+    -# mathiasbynens.be/notes/async-analytics-snippet
+    -#
 
-        -# :javascript
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+    -# :javascript
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));

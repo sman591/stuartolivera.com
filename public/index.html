@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Stuart Olivera - Web Designer & Developer</title>
+    <meta content='' name='description'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <link href='images/favicon.ico' rel='shortcut icon'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Coustard' rel='stylesheet'>
+    <link href='css/screen.css' rel='stylesheet'>
+    <!--[if (lt IE 9) & (!IEMobile)]>
+      <script src='javascript/libs/selectivizr.min.js'></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='container'>
+      <div class='main'>
+        <div class='content'>
+          <div class='name'>
+            <h1>Stuart Olivera</h1>
+            <h2>Designer & Developer</h2>
+          </div>
+          <div class='social'>
+            <a class='social32 github_icon32' href='http://github.com/sman591'></a>
+            <a class='social32 stackoverflow_icon32' href='http://stackoverflow.com/users/237098/sman591'></a>
+            <a class='social32 linkedin_icon32' href='http://linkedin.com/in/stuartolivera'></a>
+            <a class='social32 behance_icon32' href='http://www.behance.net/stuartolivera'></a>
+            <a class='social32 twitter_icon32' href='http://twitter.com/stuartolivera'></a>
+            <a class='social32 flickr_icon32' href='http://www.flickr.com/photos/stuartolivera/'></a>
+            <a class='social32 facebook_icon32' href='http://facebook.com/stuartolivera'></a>
+          </div>
+          <nav>
+            <div class='nav'>
+              <li class='active'>
+                <a href='#home'>Home</a>
+              </li>
+              <li>-</li>
+              <li>
+                <a href='#about'>About</a>
+              </li>
+              <li>-</li>
+              <li>
+                <a href='#portfolio'>Portfolio</a>
+              </li>
+            </div>
+            <div class='nav'>
+              <li>
+                <a href='#services'>Services</a>
+              </li>
+              <li>-</li>
+              <li>
+                <a href='#contact'>Contact</a>
+              </li>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class='panels'>
+        <div class='home' id='home'></div>
+        <div class='about' id='about'>
+          <img class='headshot' src='images/stuart.jpg'>
+          <p>Hey, I'm <span>Stuart</span>! I'm 17 years old and love to <span>design</span> & <span>build</span> websites. I've had 6+ years of experience with websites, along with 5+ yeas of experience with commercial work.</p>
+          <p>I'm familiar with <span>PHP</span>, <span>MySQL</span>, <span>MongoDB</span>, <span>JavaScript</span>, <span>CoffeeScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>HTML</span>, <span>Ruby</span>, <span>Rails</span>, <span>Backbone.js</span>, <span>LESS</span>, and <span>SASS</span>, and continue to learn new languages.</p>
+          <p>I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks english can request my <a href="#services">services</a>.</p>
+        </div>
+        <div class='portfolio' id='portfolio'>
+          <p>My portfolio can be accessed <a href="http://www.behance.net/stuartolivera">here &raquo;</a></p>
+        </div>
+        <div class='services' id='services'>
+          <h2>Design</h2>
+          <p>Need a design for your new website? Time to upgrade your existing design? Maybe that new feature you're building just doesn't fit with what you are trying to market? I'm here to help. Whether it be a website, blog, app, or something even better, I can take it to the next level.</p>
+          <br>
+          <h2>Development</h2>
+          <p>No matter what the purpose or market is, your website deserves to be built flawlessly and efficiently. Blogs, apps, and other websites I build keep a strong focus on the best possible visitor and user experience while maintaining high stability and performance.</p>
+        </div>
+        <div class='contact' id='contact'>
+          <p>Looking for my services? Have a question? Just want to chat? Here's the place to do just that.</p>
+          <br>
+          <form action='contact.php' class='form-horizontal' id='contactForm' method='post'>
+            <div class='form_user'>
+              <label for='username'>Username</label>
+              <input name='username' type='text'>
+            </div>
+            <div class='control-group'>
+              <label class='control-label' for='contactName'>Name</label>
+              <div class='controls'>
+                <input id='contactName' name='name' placeholder='Name' type='text'>
+              </div>
+            </div>
+            <div class='control-group'>
+              <label class='control-label' for='contactEmail'>Email</label>
+              <div class='controls'>
+                <input id='contactEmail' name='email' placeholder='Email' type='text'>
+              </div>
+            </div>
+            <div class='control-group'>
+              <label class='control-label' for='contactSubject'>Subject</label>
+              <div class='controls'>
+                <select id='contactSubject' name='subject'>
+                  <option>Please choose...</option>
+                  <option value='Requesting Services'>Requesting Services</option>
+                  <option value='Requesting Support'>Requesting Support</option>
+                  <option value='I Have A Question'>I Have A Question</option>
+                  <option value='Just Want To Chat'>Just Want To Chat</option>
+                  <option value='Other'>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class='control-group'>
+              <label class='control-label' for='contactComments'>Comments</label>
+              <div class='controls'>
+                <textarea id='contactName' name='comments' placeholder='Comments' rows='7'></textarea>
+              </div>
+            </div>
+            <div class='control-group'>
+              <div class='controls'>
+                <button class='btn btn-primary' type='submit'>Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class='stripes'>
+      <br>
+    </div>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
+    <script>
+      window.jQuery || document.write('<script src="javascript/jquery-1.10.1.min.js"><\/script>')
+    </script>
+    <script src='javascript/jquery.ba-hashchange.min.js'></script>
+    <script src='javascript/jquery.fittext.js'></script>
+    <script src='javascript/jquery.form.min.js'></script>
+    <script src='javascript/app.js'></script>
+  </body>
+</html>
