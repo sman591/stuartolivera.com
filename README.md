@@ -12,6 +12,6 @@ Compiling
 -----------------
 Currently, I'm using LiveReload to process everything locally. Below are the output locations:
 
-* index.haml ~> public/index.html
+* src/index.haml ~> public/index.html
 * src/stylesheets ~> public/css
 * src/javascripts ~> public/javascript
