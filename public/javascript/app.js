@@ -12,8 +12,10 @@
     $('.main h2').fitText(1.7, {
       maxFontSize: '42px'
     });
-    return $('.panels > div p').fitText(2.2, {
-      maxFontSize: '18px'
+    $('.panels > div').fitText(2.2, {
+      maxFontSize: '18px',
+      minFontSize: '12px'
+    });
     return $('form').ajaxForm({
       beforeSubmit: disableSubmits,
       success: enableSubmits,

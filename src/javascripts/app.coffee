@@ -12,7 +12,8 @@ $(document).ready ->
 
   $('.main h1').fitText(0.7, { maxFontSize: '100px' })
   $('.main h2').fitText(1.7, { maxFontSize: '42px' })
-  $('.panels > div p').fitText(2.2, { maxFontSize: '18px' })
+  $('.panels > div').fitText(2.2, { maxFontSize: '18px', minFontSize: '12px' })
+
   # Contact Form
 
   $('form').ajaxForm
