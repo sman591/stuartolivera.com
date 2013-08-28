@@ -8491,6 +8491,22 @@ nav .nav:first-child {
   font-size: 33px;
 }
 
+/* line 152, ../../src/stylesheets/screen.sass */
+.control-group .controls {
+  text-align: left;
+}
+
+/* line 155, ../../src/stylesheets/screen.sass */
+.form_user {
+  display: none;
+}
+
+/* line 158, ../../src/stylesheets/screen.sass */
+.response {
+  display: none;
+  margin-left: 9px;
+}
+
 @media (min-width: 1400px) {
   /* line 152, ../../src/stylesheets/screen.sass */
   .main {

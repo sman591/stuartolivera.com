@@ -137,6 +137,35 @@
         %script{:src => "javascript/jquery.fittext.js"}
 
         -# Custom JS
+          %form#contactForm.form-horizontal{:action => "contact.php", :method => "post"}
+            .form_user
+              %label{:for => "username"} Username
+              %input{:type => "text", :name=> "username"}
+            .control-group
+              %label.control-label{:for => "contactName"} Name
+              .controls
+                %input#contactName{:type => "text", :name => "name", :placeholder => "Name"}
+            .control-group
+              %label.control-label{:for => "contactEmail"} Email
+              .controls
+                %input#contactEmail{:type => "text", :name => "email", :placeholder => "Email"}
+            .control-group
+              %label.control-label{:for => "contactSubject"} Subject
+              .controls
+                %select#contactSubject{:name => "subject"}
+                  %option Please choose...
+                  %option{:value => "Requesting Services"} Requesting Services
+                  %option{:value => "Requesting Support"} Requesting Support
+                  %option{:value => "I Have A Question"} I Have A Question
+                  %option{:value => "Just Want To Chat"} Just Want To Chat
+                  %option{:value => "Other"} Other
+            .control-group
+              %label.control-label{:for => "contactComments"} Comments
+              .controls
+                %textarea#contactName{:name => "comments", :placeholder => "Comments", :rows => "7"}
+            .control-group
+              .controls
+                %button.btn.btn-primary{:type => "submit"} Send
 
         %script{:src => "javascript/app.js"}
 
@@ -150,4 +179,4 @@
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            s.parentNode.insertBefore(g,s)}(document,'script'));    %script{:src => "javascript/jquery.form.min.js"}
