@@ -1,6 +1,6 @@
 StuartOlivera.com
 =================
-All of the magnificent code for http://stuartolivera.com
+All the magnificent code for http://stuartolivera.com
 
 Requirements
 -----------------
