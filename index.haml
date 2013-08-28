@@ -3,140 +3,132 @@
 -# paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 
 -# <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
--# <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
--# <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+-# <!--[if IE 7]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+-# <!--[if IE 8]>  <html class="no-js lt-ie9" lang="en"> <![endif]-->
 -# <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 %html.no-js{:lang => "en"}
 
-    %head
+  %head
 
-        -# ==========================================================================
-        -# Head
-        -# ==========================================================================
+    -# ==========================================================================
+    -# Head
+    -# ==========================================================================
 
-        %meta{:charset => "utf-8"}
+    %meta{:charset => "utf-8"}
 
-        %title Stuart Olivera - Web Designer & Developer
-        %meta{:name => "description", :content => ""}
-        -# %meta{:name => "keywords", :content => ""}
-        -# %meta{:name => "author", :content => ""}
+    %title Stuart Olivera - Web Designer & Developer
+    %meta{:name => "description", :content => ""}
+    -# %meta{:name => "keywords", :content => ""}
+    -# %meta{:name => "author", :content => ""}
 
-        -# Mobile
-        -# ==========================================================================
+    -# Mobile
+    -# ==========================================================================
 
-        %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
 
-        -# Favicon
-        -# ==========================================================================
+    -# Favicon
+    -# ==========================================================================
 
-        %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
 
-        -# CSS
-        -# ==========================================================================
+    -# CSS
+    -# ==========================================================================
 
-        %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=PT+Sans:400,700|Coustard"}
-        %link{:rel => "stylesheet", :href => "css/screen.css"}
+    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=PT+Sans:400,700|Coustard"}
+    %link{:rel => "stylesheet", :href => "css/screen.css"}
 
-        -# IE Fixes
-        -# ==========================================================================
+    -# IE Fixes
+    -# ==========================================================================
 
-        -#
-        -# Use HTML5 Shim polyfill if not using Modernizr
-        -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-        -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-        -#
+    -#
+    -# Use HTML5 Shim polyfill if not using Modernizr
+    -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
+    -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
+    -#
 
-        /[if (lt IE 9) & (!IEMobile)]
-            -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-            %script{:src => "javascript/libs/selectivizr.min.js"}
-            -# %link{:rel => "stylesheet", :href => "resources/css/oldie.css"}
-            -# %link{:rel => "stylesheet", :href => "resources/css/ie8.css"}
+    /[if (lt IE 9) & (!IEMobile)]
+      -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
+      %script{:src => "javascript/libs/selectivizr.min.js"}
+      -# %link{:rel => "stylesheet", :href => "resources/css/oldie.css"}
+      -# %link{:rel => "stylesheet", :href => "resources/css/ie8.css"}
 
-    %body
+  %body
 
-        -# ==========================================================================
-        -# Content
-        -# ==========================================================================
+    -# ==========================================================================
+    -# Content
+    -# ==========================================================================
 
-        .container
+    .container
 
-            .main
-                .content
-                    .name
-                        %h1 Stuart Olivera
-                        %h2 Designer & Developer
+      .main
+        .content
+          .name
+            %h1 Stuart Olivera
+            %h2 Designer & Developer
 
-                    .social
-                        %a.social32.github_icon32{:href => "http://github.com/sman591"}
-                        %a.social32.stackoverflow_icon32{:href => "http://stackoverflow.com/users/237098/sman591"}
-                        %a.social32.linkedin_icon32{:href => "http://linkedin.com/in/stuartolivera"}
-                        %a.social32.behance_icon32{:href => "http://www.behance.net/stuartolivera"}
-                        %a.social32.twitter_icon32{:href => "http://twitter.com/stuartolivera"}
-                        %a.social32.flickr_icon32{:href => "http://www.flickr.com/photos/stuartolivera/"}
-                        %a.social32.facebook_icon32{:href => "http://facebook.com/stuartolivera"}
+          .social
+            %a.social32.github_icon32{:href => "http://github.com/sman591"}
+            %a.social32.stackoverflow_icon32{:href => "http://stackoverflow.com/users/237098/sman591"}
+            %a.social32.linkedin_icon32{:href => "http://linkedin.com/in/stuartolivera"}
+            %a.social32.behance_icon32{:href => "http://www.behance.net/stuartolivera"}
+            %a.social32.twitter_icon32{:href => "http://twitter.com/stuartolivera"}
+            %a.social32.flickr_icon32{:href => "http://www.flickr.com/photos/stuartolivera/"}
+            %a.social32.facebook_icon32{:href => "http://facebook.com/stuartolivera"}
 
-                    %nav
-                        .nav
-                            %li.active
-                                %a{:href => "#home"} Home
-                            %li -
-                            %li
-                                %a{:href => "#about"} About
-                            %li -
-                            %li
-                                %a{:href => "#portfolio"} Portfolio
+          %nav
+            .nav
+              %li.active
+                %a{:href => "#home"} Home
+              %li -
+              %li
+                %a{:href => "#about"} About
+              %li -
+              %li
+                %a{:href => "#portfolio"} Portfolio
 
-                        .nav
-                            %li
-                                %a{:href => "#services"} Services
-                            %li -
-                            %li
-                                %a{:href => "#contact"} Contact
+            .nav
+              %li
+                %a{:href => "#services"} Services
+              %li -
+              %li
+                %a{:href => "#contact"} Contact
 
-            .panels
-                #about.about
+      .panels
+        #home.home
 
-                    %img.headshot{:src => "images/stuart.jpg"}
+        #about.about
 
-                    %p Hey, I'm <span>Stuart</span>! I'm 17 years old and love to <span>design</span> & <span>build</span> websites. I've had 6+ years of experience with websites, along with 5+ yeas of experience with commercial work.
+          %img.headshot{:src => "images/stuart.jpg"}
 
-                    %p I've worked with <span>PHP</span>, <span>MySQL</span>, <span>MongoDB</span>, <span>JavaScript</span>, <span>CoffeeScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>HTML</span>, <span>Ruby</span>, <span>Rails</span>, <span>Backbone.js</span>, <span>LESS</span>, and <span>SASS</span>, and continue to learn new languages.
+          %p Hey, I'm <span>Stuart</span>! I'm 17 years old and love to <span>design</span> & <span>build</span> websites. I've had 6+ years of experience with websites, along with 5+ yeas of experience with commercial work.
 
-                    %p I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks english can request my <a href="#services">services</a>.
+          %p I'm familiar with <span>PHP</span>, <span>MySQL</span>, <span>MongoDB</span>, <span>JavaScript</span>, <span>CoffeeScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>HTML</span>, <span>Ruby</span>, <span>Rails</span>, <span>Backbone.js</span>, <span>LESS</span>, and <span>SASS</span>, and continue to learn new languages.
 
-                #portfolio.portfolio
+          %p I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks english can request my <a href="#services">services</a>.
 
-                    %p Portfolio...
+        #portfolio.portfolio
 
-                #services.services
+          %p My portfolio can be accessed <a href="http://www.behance.net/stuartolivera">here &raquo;</a>
 
-                    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bonum negas esse divitias, praeposìtum esse dicis? Quamvis enim depravatae non sint, pravae tamen esse possunt. Si mala non sunt, iacet omnis ratio Peripateticorum. Sed ea mala virtuti magnitudine obruebantur. Quid enim?
-                    %p Qua tu etiam inprudens utebare non numquam. Sin te auctoritas commovebat, nobisne omnibus et Platoni ipsi nescio quem illum anteponebas? Quo studio Aristophanem putamus aetatem in litteris duxisse?
-                    %p Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres. At quicum ioca seria, ut dicitur, quicum arcana, quicum occulta omnia? Nihil opus est exemplis hoc facere longius. Summum ením bonum exposuit vacuitatem doloris;
-                    %p Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. Quae cum essent dicta, discessimus. Quid ad utilitatem tantae pecuniae? Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec. Quae similitudo in genere etiam humano apparet.
+        #services.services
 
-                #contact.contact
+          %h2 Design
 
-                    %h4 A contact form would go here.
+          %p Need a design for your new website? Time to upgrade your existing design? Maybe that new feature you're building just doesn't fit with what you are trying to market? I'm here to help. Whether it be a website, blog, app, or something even better, I can take it to the next level.
 
-        .stripes
-            %br/
+          %br/
 
+          %h2 Development
 
-        -# JS
-        -# ==========================================================================
+          %p No matter what the purpose or market is, your website deserves to be built flawlessly and efficiently. Blogs, apps, and other websites I build keep a strong focus on the best possible visitor and user experience while maintaining high stability and performance.
 
-        -# jQuery
+        #contact.contact
 
-        %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
-        :javascript
-            window.jQuery || document.write('<script src="javascript/jquery-1.10.1.min.js"><\/script>')
+          %p Looking for my services? Have a question? Just want to chat? Here's the place to do just that.
 
-        %script{:src => "javascript/jquery.ba-hashchange.min.js"}
-        %script{:src => "javascript/jquery.fittext.js"}
+          %br/
 
-        -# Custom JS
           %form#contactForm.form-horizontal{:action => "contact.php", :method => "post"}
             .form_user
               %label{:for => "username"} Username
@@ -167,16 +159,35 @@
               .controls
                 %button.btn.btn-primary{:type => "submit"} Send
 
-        %script{:src => "javascript/app.js"}
+    .stripes
+      %br/
 
-        -#
-        -# Asynchronous Google Analytics
-        -# Change UA-XXXXX-X to be your site's ID
-        -# mathiasbynens.be/notes/async-analytics-snippet
-        -#
 
-        -# :javascript
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));    %script{:src => "javascript/jquery.form.min.js"}
+    -# JS
+    -# ==========================================================================
+
+    -# jQuery
+
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="javascript/jquery-1.10.1.min.js"><\/script>')
+
+    %script{:src => "javascript/jquery.ba-hashchange.min.js"}
+    %script{:src => "javascript/jquery.fittext.js"}
+    %script{:src => "javascript/jquery.form.min.js"}
+
+    -# Custom JS
+
+    %script{:src => "javascript/app.js"}
+
+    -#
+    -# Asynchronous Google Analytics
+    -# Change UA-XXXXX-X to be your site's ID
+    -# mathiasbynens.be/notes/async-analytics-snippet
+    -#
+
+    -# :javascript
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));

@@ -10,7 +10,7 @@ $serifFontFamily: "Coustard", serif
 @import bootstrap-responsive
 
 body
-  background: url(../images/pw_maze_black.png) repeat
+  background: url(../images/pw_maze_black.png) fixed repeat
   /* Temporary until Bootstrap comes in */
   color: #fff
   font-family: PT Sans
@@ -171,9 +171,14 @@ nav
     left: 50%
 
 
-@media (max-width: 979px) and (min-width: 768px)
+@media (max-width: 1000px) and (min-width: 768px)
   .nav li
-    font-size: 24px
+    font-size: 26px
+    padding: 6px
+
+@media (max-width: 575px)
+  .nav li
+    font-size: 26px
     padding: 6px
 
 @media (max-width: 767px)

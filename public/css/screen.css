@@ -8297,7 +8297,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 }
 /* line 12, ../../src/stylesheets/screen.sass */
 body {
-  background: url(../images/pw_maze_black.png) repeat;
+  background: url(../images/pw_maze_black.png) fixed repeat;
   /* Temporary until Bootstrap comes in */
   color: white;
   font-family: PT Sans;
@@ -8508,35 +8508,42 @@ nav .nav:first-child {
 }
 
 @media (min-width: 1400px) {
-  /* line 152, ../../src/stylesheets/screen.sass */
+  /* line 163, ../../src/stylesheets/screen.sass */
   .main {
     width: 700px;
     right: 50%;
     left: auto;
   }
 
-  /* line 157, ../../src/stylesheets/screen.sass */
+  /* line 168, ../../src/stylesheets/screen.sass */
   .panels {
     width: 700px;
     right: auto;
     left: 50%;
   }
 }
-@media (max-width: 979px) and (min-width: 768px) {
-  /* line 164, ../../src/stylesheets/screen.sass */
+@media (max-width: 1000px) and (min-width: 768px) {
+  /* line 175, ../../src/stylesheets/screen.sass */
   .nav li {
-    font-size: 24px;
+    font-size: 26px;
+    padding: 6px;
+  }
+}
+@media (max-width: 575px) {
+  /* line 180, ../../src/stylesheets/screen.sass */
+  .nav li {
+    font-size: 26px;
     padding: 6px;
   }
 }
 @media (max-width: 767px) {
-  /* line 170, ../../src/stylesheets/screen.sass */
+  /* line 186, ../../src/stylesheets/screen.sass */
   .container > div {
     position: relative;
     width: auto;
   }
 
-  /* line 174, ../../src/stylesheets/screen.sass */
+  /* line 190, ../../src/stylesheets/screen.sass */
   .stripes {
     position: absolute;
     top: 100%;
