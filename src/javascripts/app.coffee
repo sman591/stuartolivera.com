@@ -54,12 +54,15 @@ jQuery.fn.mouseHovers = ->
     , 200
 
 jQuery.fn.centerVertically = ->
-    padding_top = Math.max(0, (($(window).height() - $(this).height()) / 2)  - 50)
-    padding_bottom = Math.max(0, $(window).height() - $(this).height() - padding_top - $(window).scrollTop() - 50)
 
-    this.css("padding-top", padding_top + "px")
-    this.css("padding-bottom", padding_bottom + "px")
-    return thisdisableSubmits = (formData, jqForm, options) ->
+    top    = Math.max 0, (($(window).height() - $(this).height()) / 2)  - 50
+    bottom = Math.max 0, $(window).height() - $(this).height() - top - 50
+
+    this.css("padding-top", top + "px")
+    this.css("padding-bottom", bottom + "px")
+    return this
+
+disableSubmits = (formData, jqForm, options) ->
   $(jqForm).find('.error').removeClass('error')
   $(jqForm).find('.response').remove()
 
