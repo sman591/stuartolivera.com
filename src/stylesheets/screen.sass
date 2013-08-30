@@ -164,12 +164,14 @@ nav
 
 .control-group
   display: inline-block
+
+.form-horizontal
   .control-label
     width: 100px
   .controls
     margin-left: 120px
     text-align: left
-  &.actions
+  .actions
     padding-right: 160px
 
 .form_user
@@ -213,3 +215,8 @@ nav
   .nav li
     font-size: 26px
     padding: 6px
+
+@media (max-width: 480px)
+  .form-horizontal
+    .controls
+      margin-left: 0
