@@ -135,10 +135,10 @@ jQuery.fn.fancyPanels = ->
   for panels in $(this)
     possibleHashes.push $(panels).data('hash') if $(panels).data('hash')
 
-  homepage = newHash == 'home' || newHash == '' || $.inArray(newHash, possibleHashes) == -1
+  window.fancyPanels.homepage = newHash == 'home' || newHash == '' || $.inArray(newHash, possibleHashes) == -1
 
   centerHomepage = ->
-    $('.main').css('margin-right', $('.main').getHorizontalCenterOffset()) if homepage
+    $('.main').css('margin-right', $('.main').getHorizontalCenterOffset()) if window.fancyPanels.homepage
 
   # Handle first visit
 
@@ -151,11 +151,11 @@ jQuery.fn.fancyPanels = ->
     $('.panels > div').animate
       opacity: 1
     , 1600, 'swing'
-    $('.stripes').fadeIn(1600) if !homepage
+    $('.stripes').fadeIn(1600) if !window.fancyPanels.homepage
 
   # Animate the homepage & background slides
 
-  if homepage
+  if window.fancyPanels.homepage
     if !firstHash
       $('.main').clearQueue()
       $('.main').animate
