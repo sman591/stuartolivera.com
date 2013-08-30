@@ -65,10 +65,16 @@
   };
 
   jQuery.fn.centerVertically = function() {
-    var bottom, top;
+    var bottom, min, offset, top;
 
-    top = Math.max(0, (($(window).height() - $(this).height()) / 2) - 50);
-    bottom = Math.max(0, $(window).height() - $(this).height() - top - 50);
+    min = 10;
+    offset = 0.1;
+    top = Math.max(min, ($(window).height() - $(this).height()) / 2);
+    bottom = Math.max(min, $(window).height() - $(this).height() - top);
+    if (top - $(window).height() * offset > min) {
+      top -= $(window).height() * offset;
+      bottom += $(window).height() * offset;
+    }
     this.css("padding-top", top + "px");
     this.css("padding-bottom", bottom + "px");
     return this;
