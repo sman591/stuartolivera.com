@@ -115,6 +115,9 @@ jQuery.fn.fancyPanels = ->
     $(window).hashchange ->
         $(that).fancyPanels()
 
+    $(window).resize ->
+      centerHomepage()
+
     $('.main').css('top', $(window).height() + "px")
     firstHash = true
   else
@@ -128,8 +131,13 @@ jQuery.fn.fancyPanels = ->
 
   homepage = newHash == 'home' || newHash == '' || $.inArray(newHash, possibleHashes) == -1
 
-  if firstHash
+  centerHomepage = ->
     $('.main').css('margin-right', $('.main').getHorizontalCenterOffset()) if homepage
+
+  # Handle first visit
+
+  if firstHash
+    centerHomepage()
     $('.main').animate
       top: 0,
       opacity: 1
@@ -155,6 +163,8 @@ jQuery.fn.fancyPanels = ->
       "margin-right": "0px"
     , 1600, 'swing'
 
+  # Animate the panel
+
   if $.inArray(newHash, possibleHashes) == -1
     $('html, body').animate
       scrollTop: 0
@@ -164,8 +174,6 @@ jQuery.fn.fancyPanels = ->
     $('html, body').animate
         scrollTop: $("[data-hash=#{newHash}]").offset().top
     , 1600, 'swing'
-  else
-    console.log('current')
 
   window.fancyPanels.currentHash = newHash
 

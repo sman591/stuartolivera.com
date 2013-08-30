@@ -124,7 +124,7 @@
   };
 
   jQuery.fn.fancyPanels = function() {
-    var firstHash, homepage, newHash, panels, params, possibleHashes, that, _i, _len, _ref;
+    var centerHomepage, firstHash, homepage, newHash, panels, params, possibleHashes, that, _i, _len, _ref;
 
     if (window.fancyPanels === void 0) {
       window.fancyPanels = [];
@@ -132,6 +132,9 @@
       that = this;
       $(window).hashchange(function() {
         return $(that).fancyPanels();
+      });
+      $(window).resize(function() {
+        return centerHomepage();
       });
       $('.main').css('top', $(window).height() + "px");
       firstHash = true;
@@ -148,10 +151,13 @@
       }
     }
     homepage = newHash === 'home' || newHash === '' || $.inArray(newHash, possibleHashes) === -1;
-    if (firstHash) {
+    centerHomepage = function() {
       if (homepage) {
-        $('.main').css('margin-right', $('.main').getHorizontalCenterOffset());
+        return $('.main').css('margin-right', $('.main').getHorizontalCenterOffset());
       }
+    };
+    if (firstHash) {
+      centerHomepage();
       $('.main').animate({
         top: 0,
         opacity: 1
@@ -187,8 +193,6 @@
       $('html, body').animate({
         scrollTop: $("[data-hash=" + newHash + "]").offset().top
       }, 1600, 'swing');
-    } else {
-      console.log('current');
     }
     return window.fancyPanels.currentHash = newHash;
   };
