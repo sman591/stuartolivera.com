@@ -3257,26 +3257,32 @@ nav .nav:first-child { margin-bottom: 4px; }
 /* line 159, ../../src/stylesheets/screen.sass */
 .nav li { display: inline-block; margin: 0 auto; padding: 10px; font-size: 33px; }
 
-/* line 166, ../../src/stylesheets/screen.sass */
-.control-group .controls { text-align: left; }
-
+/* line 165, ../../src/stylesheets/screen.sass */
+.control-group { display: inline-block; }
+/* line 167, ../../src/stylesheets/screen.sass */
+.control-group .control-label { width: 100px; }
 /* line 169, ../../src/stylesheets/screen.sass */
+.control-group .controls { margin-left: 120px; text-align: left; }
+/* line 172, ../../src/stylesheets/screen.sass */
+.control-group.actions { padding-right: 160px; }
+
+/* line 175, ../../src/stylesheets/screen.sass */
 .form_user { display: none; }
 
-/* line 172, ../../src/stylesheets/screen.sass */
+/* line 178, ../../src/stylesheets/screen.sass */
 .response { display: none; margin-left: 9px; }
 
-@media (min-width: 1400px) { /* line 177, ../../src/stylesheets/screen.sass */
+@media (min-width: 1400px) { /* line 183, ../../src/stylesheets/screen.sass */
   .main { width: 700px; }
-  /* line 180, ../../src/stylesheets/screen.sass */
+  /* line 186, ../../src/stylesheets/screen.sass */
   .panels { width: 700px; right: auto; left: 50%; } }
-@media (max-width: 1000px) and (min-width: 768px) { /* line 187, ../../src/stylesheets/screen.sass */
+@media (max-width: 1000px) and (min-width: 768px) { /* line 193, ../../src/stylesheets/screen.sass */
   .nav li { font-size: 26px; padding: 6px; } }
-@media (max-width: 767px) { /* line 192, ../../src/stylesheets/screen.sass */
+@media (max-width: 767px) { /* line 198, ../../src/stylesheets/screen.sass */
   body { overflow: auto; }
-  /* line 195, ../../src/stylesheets/screen.sass */
+  /* line 201, ../../src/stylesheets/screen.sass */
   .container > div { position: absolute; left: 0; width: 100%; }
-  /* line 200, ../../src/stylesheets/screen.sass */
+  /* line 206, ../../src/stylesheets/screen.sass */
   .stripes { position: absolute; top: 100%; left: 0; width: 100%; } }
-@media (max-width: 575px) { /* line 207, ../../src/stylesheets/screen.sass */
+@media (max-width: 575px) { /* line 213, ../../src/stylesheets/screen.sass */
   .nav li { font-size: 26px; padding: 6px; } }
