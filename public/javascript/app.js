@@ -68,7 +68,7 @@
     var bottom, min, offset, top;
 
     min = 10;
-    offset = 0.1;
+    offset = 0.08;
     top = Math.max(min, ($(window).height() - $(this).height()) / 2);
     bottom = Math.max(min, $(window).height() - $(this).height() - top);
     if (top - $(window).height() * offset > min) {

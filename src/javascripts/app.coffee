@@ -60,7 +60,7 @@ jQuery.fn.mouseHovers = ->
 jQuery.fn.centerVertically = ->
 
     min    = 10
-    offset = 0.1
+    offset = 0.08
 
     top    = Math.max min, (($(window).height() - $(this).height()) / 2)
     bottom = Math.max min, $(window).height() - $(this).height() - top
