@@ -21,9 +21,7 @@
       resetForm: true,
       timeout: 1000
     });
-    return $('.main, .panels > div').fancyPanels({
-      links: $('a')
-    });
+    return $('.main, .panels > div').fancyPanels();
   });
 
   $.fn.serializeObject = function() {

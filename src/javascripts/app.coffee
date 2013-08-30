@@ -24,8 +24,7 @@ $(document).ready ->
 
   # Fany panels
 
-  $('.main, .panels > div').fancyPanels
-    links: $('a')
+  $('.main, .panels > div').fancyPanels()
 
 $.fn.serializeObject = ->
   o = {}
