@@ -1,2 +1,8 @@
 .DS_Store
 .sass-cache
+public/bgcolor
+public/blog
+public/clients
+public/invoices
+public/previewer
+public/share
