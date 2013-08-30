@@ -15,11 +15,14 @@
       maxFontSize: '18px',
       minFontSize: '12px'
     });
-    return $('form').ajaxForm({
+    $('form').ajaxForm({
       beforeSubmit: disableSubmits,
       success: enableSubmits,
       resetForm: true,
       timeout: 1000
+    });
+    return $('.main, .panels > div').fancyPanels({
+      links: $('a')
     });
   });
 
@@ -114,6 +117,80 @@
       return $(this).removeAttr("disabled").text($(this).data('original-text')).after('<span class="response"><span class="label label-success">Sent, thank you!</span></span>');
     });
     return $form.find('.response').fadeIn(300);
+  };
+
+  jQuery.fn.getHorizontalCenterOffset = function() {
+    return Math.min(0, ($(window).width() / 2 - $(this).offset().left - $(this).css('margin-right').replace(/[^-\d\.]/g, '') - $(this).width() / 2) * -1);
+  };
+
+  jQuery.fn.fancyPanels = function() {
+    var firstHash, homepage, newHash, panels, params, possibleHashes, that, _i, _len, _ref;
+
+    if (window.fancyPanels === void 0) {
+      window.fancyPanels = [];
+      params = arguments[0] || [];
+      that = this;
+      $(window).hashchange(function() {
+        return $(that).fancyPanels();
+      });
+      $('.main').css('top', $(window).height() + "px");
+      firstHash = true;
+    } else {
+      firstHash = false;
+    }
+    newHash = window.location.hash.split('#')[1] || '';
+    possibleHashes = [];
+    _ref = $(this);
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      panels = _ref[_i];
+      if ($(panels).data('hash')) {
+        possibleHashes.push($(panels).data('hash'));
+      }
+    }
+    homepage = newHash === 'home' || newHash === '' || $.inArray(newHash, possibleHashes) === -1;
+    if (firstHash) {
+      if (homepage) {
+        $('.main').css('margin-right', $('.main').getHorizontalCenterOffset());
+      }
+      $('.main').animate({
+        top: 0,
+        opacity: 1
+      }, 1600, 'swing');
+      $('.panels > div').animate({
+        opacity: 1
+      }, 1600, 'swing');
+      if (!homepage) {
+        $('.stripes').fadeIn(1600);
+      }
+    }
+    if (homepage) {
+      if (!firstHash) {
+        $('.main').clearQueue();
+        $('.main').animate({
+          "margin-right": $('.main').getHorizontalCenterOffset()
+        }, 1600, 'swing');
+        $('.stripes').fadeOut(1600);
+      }
+    } else {
+      $('.stripes').fadeIn(1600);
+      $('.main').clearQueue();
+      $('.main').animate({
+        "margin-right": "0px"
+      }, 1600, 'swing');
+    }
+    if ($.inArray(newHash, possibleHashes) === -1) {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 1600, 'swing');
+    } else if ($(window).scrollTop() !== $("[data-hash=" + newHash + "]").offset().top || window.fancyPanels.currentHash !== newHash) {
+      $('html, body').clearQueue();
+      $('html, body').animate({
+        scrollTop: $("[data-hash=" + newHash + "]").offset().top
+      }, 1600, 'swing');
+    } else {
+      console.log('current');
+    }
+    return window.fancyPanels.currentHash = newHash;
   };
 
 }).call(this);

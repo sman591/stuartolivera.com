@@ -22,6 +22,11 @@ $(document).ready ->
     resetForm:    true
     timeout:      1000
 
+  # Fany panels
+
+  $('.main, .panels > div').fancyPanels
+    links: $('a')
+
 $.fn.serializeObject = ->
   o = {}
   a = @serializeArray()
@@ -96,3 +101,71 @@ enableSubmits = (responseText, statusText, xhr, $form) ->
   $form.find('button[type=submit], input[type=submit]').each ->
     $(this).removeAttr("disabled").text($(this).data('original-text')).after('<span class="response"><span class="label label-success">Sent, thank you!</span></span>')
   $form.find('.response').fadeIn(300)
+
+jQuery.fn.getHorizontalCenterOffset = ->
+  return Math.min(0, ($(window).width() / 2 - $(this).offset().left - $(this).css('margin-right').replace(/[^-\d\.]/g, '') - $(this).width() / 2)*-1)
+
+jQuery.fn.fancyPanels = ->
+
+  if window.fancyPanels == undefined
+    window.fancyPanels = []
+    params = arguments[0] || []
+
+    that = this
+    $(window).hashchange ->
+        $(that).fancyPanels()
+
+    $('.main').css('top', $(window).height() + "px")
+    firstHash = true
+  else
+    firstHash = false
+
+  newHash = window.location.hash.split('#')[1] || ''
+
+  possibleHashes = []
+  for panels in $(this)
+    possibleHashes.push $(panels).data('hash') if $(panels).data('hash')
+
+  homepage = newHash == 'home' || newHash == '' || $.inArray(newHash, possibleHashes) == -1
+
+  if firstHash
+    $('.main').css('margin-right', $('.main').getHorizontalCenterOffset()) if homepage
+    $('.main').animate
+      top: 0,
+      opacity: 1
+    , 1600, 'swing'
+    $('.panels > div').animate
+      opacity: 1
+    , 1600, 'swing'
+    $('.stripes').fadeIn(1600) if !homepage
+
+  # Animate the homepage & background slides
+
+  if homepage
+    if !firstHash
+      $('.main').clearQueue()
+      $('.main').animate
+        "margin-right": $('.main').getHorizontalCenterOffset()
+      , 1600, 'swing'
+      $('.stripes').fadeOut(1600)
+  else
+    $('.stripes').fadeIn(1600)
+    $('.main').clearQueue()
+    $('.main').animate
+      "margin-right": "0px"
+    , 1600, 'swing'
+
+  if $.inArray(newHash, possibleHashes) == -1
+    $('html, body').animate
+      scrollTop: 0
+    , 1600, 'swing'
+  else if $(window).scrollTop() != $("[data-hash=#{newHash}]").offset().top || window.fancyPanels.currentHash != newHash
+    $('html, body').clearQueue()
+    $('html, body').animate
+        scrollTop: $("[data-hash=#{newHash}]").offset().top
+    , 1600, 'swing'
+  else
+    console.log('current')
+
+  window.fancyPanels.currentHash = newHash
+

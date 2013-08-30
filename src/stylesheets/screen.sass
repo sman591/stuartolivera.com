@@ -14,6 +14,18 @@ body
   /* Temporary until Bootstrap comes in */
   color: #fff
   font-family: PT Sans
+  overflow: hidden
+
+.no-js
+  body
+    overflow: auto
+
+.js
+  .main, .panels > div, .stripes
+    opacity: 0
+  .stripes
+    opacity: 1
+    display: none
 
 ::selection
   background: #E29700 /* Safari */
@@ -56,6 +68,9 @@ html, body, .stripes
   top: 0
   left: 0
   width: 50%
+  z-index: 1
+  right: 50%
+  left: auto
 
 .panels
   position: absolute
@@ -135,7 +150,6 @@ nav
   .nav:first-child
     margin-bottom: 4px
 
-
 .nav
   clear: both
 
@@ -162,8 +176,6 @@ nav
 @media (min-width: 1400px)
   .main
     width: 700px
-    right: 50%
-    left: auto
 
   .panels
     width: 700px
@@ -176,19 +188,22 @@ nav
     font-size: 26px
     padding: 6px
 
-@media (max-width: 575px)
-  .nav li
-    font-size: 26px
-    padding: 6px
-
 @media (max-width: 767px)
+  body
+    overflow: auto
   .container
     > div
-      position: relative
-      width: auto
+      position: absolute
+      left: 0
+      width: 100%
 
   .stripes
     position: absolute
     top: 100%
     left: 0
     width: 100%
+
+@media (max-width: 575px)
+  .nav li
+    font-size: 26px
+    padding: 6px
