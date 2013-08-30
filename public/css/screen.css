@@ -3284,8 +3284,10 @@ nav .nav:first-child { margin-bottom: 4px; }
   /* line 203, ../../src/stylesheets/screen.sass */
   .container > div { position: absolute; left: 0; width: 100%; }
   /* line 208, ../../src/stylesheets/screen.sass */
-  .stripes { position: absolute; top: 100%; left: 0; width: 100%; } }
-@media (max-width: 575px) { /* line 215, ../../src/stylesheets/screen.sass */
+  .main { background: url(../images/pw_maze_black.png) fixed repeat; }
+  /* line 211, ../../src/stylesheets/screen.sass */
+  .stripes { left: 0; width: 100%; } }
+@media (max-width: 575px) { /* line 216, ../../src/stylesheets/screen.sass */
   .nav li { font-size: 26px; padding: 6px; } }
-@media (max-width: 480px) { /* line 221, ../../src/stylesheets/screen.sass */
+@media (max-width: 480px) { /* line 222, ../../src/stylesheets/screen.sass */
   .form-horizontal .controls { margin-left: 0; } }
