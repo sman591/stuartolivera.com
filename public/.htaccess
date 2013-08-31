@@ -18,6 +18,20 @@ ForceType application/octet-stream
 Header set Content-Disposition attachment
 </FilesMatch>
 
+# Use Mod_deflate to compress static files
+<ifmodule mod_deflate.c>
+<filesmatch ".(js|css|ico|txt|htm|html|php)$">
+SetOutputFilter DEFLATE
+</filesmatch>
+</ifmodule>
+
+# Speed up caching
+FileETag MTime Size
+
+# Expires
+ExpiresActive On
+ExpiresDefault "access plus 7 days"
+
 ###Start Kloxo PHP config Area
 ###Please Don't edit these comments or the content in between. kloxo uses this to recognize the lines it writes to the the file. If the above line is corrupted, it may fail to recognize them, leading to multiple lines.
 
