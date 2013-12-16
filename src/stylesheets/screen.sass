@@ -1,7 +1,9 @@
 $blue: #00bcde
 $green: #00bf9c
 
-$linkColor:             $green
+$textColor: #fff
+
+$linkColor: $green
 
 $btnPrimaryBackground: #f00
 $serifFontFamily: "Coustard", serif
@@ -12,7 +14,7 @@ $serifFontFamily: "Coustard", serif
 body
   background: url(../images/pw_maze_black.png) fixed repeat
   /* Temporary until Bootstrap comes in */
-  color: #fff
+  color: $textColor
   font-family: PT Sans
   overflow: hidden
 
@@ -42,6 +44,9 @@ a:hover
 
 span
   color: $blue
+
+  .regular
+    color: $textColor
 
 html, body, .stripes
   height: 100%

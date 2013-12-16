@@ -3179,6 +3179,8 @@ a:hover { text-decoration: none; }
 /* line 43, ../../src/stylesheets/screen.sass */
 span { color: #00bcde; }
 
+span.regular { color: #fff; }
+
 /* line 46, ../../src/stylesheets/screen.sass */
 html, body, .stripes { height: 100%; }
 
