@@ -129,13 +129,16 @@ jQuery.fn.fancyPanels = ->
   else
     firstHash = false
 
-  newHash = window.location.hash.split('#')[1] || ''
+  hashMatches = window.location.hash.match(/(#(\w+))(-(\w+))?/) || []
+
+  pageSlug = hashMatches[2] || false
+  modalSlug = hashMatches[4] || false
 
   possibleHashes = []
   for panels in $(this)
     possibleHashes.push $(panels).data('hash') if $(panels).data('hash')
 
-  window.fancyPanels.homepage = newHash == 'home' || newHash == '' || $.inArray(newHash, possibleHashes) == -1
+  window.fancyPanels.homepage = pageSlug == 'home' || pageSlug == '' || $.inArray(pageSlug, possibleHashes) == -1
 
   centerHomepage = ->
     $('.main').css('margin-right', $('.main').getHorizontalCenterOffset()) if window.fancyPanels.homepage
@@ -152,6 +155,10 @@ jQuery.fn.fancyPanels = ->
       opacity: 1
     , 1600, 'swing'
     $('.stripes').fadeIn(1600) if !window.fancyPanels.homepage
+
+  # Hide any visible modals
+
+  $('.modals > .modal:visible').modal('hide')
 
   # Animate the homepage & background slides
 
@@ -171,15 +178,21 @@ jQuery.fn.fancyPanels = ->
 
   # Animate the panel
 
-  if $.inArray(newHash, possibleHashes) == -1
+  if $.inArray(pageSlug, possibleHashes) == -1
     $('html, body').animate
       scrollTop: 0
     , 1600, 'swing'
-  else if $(window).scrollTop() != $("[data-hash=#{newHash}]").offset().top || window.fancyPanels.currentHash != newHash
+  else if $(window).scrollTop() != $(".panels [data-hash=#{pageSlug}]").offset().top || window.fancyPanels.currentHash != pageSlug
     $('html, body').clearQueue()
     $('html, body').animate
-        scrollTop: $("[data-hash=#{newHash}]").offset().top
+        scrollTop: $(".panels [data-hash=#{pageSlug}]").offset().top
     , 1600, 'swing'
 
-  window.fancyPanels.currentHash = newHash
+  # Animate any modals
+  if modalSlug && $(".modals [data-hash=#{modalSlug}]") != undefined
+    $(".modals [data-hash=#{modalSlug}]").modal('show').on 'hidden', ->
+      window.location.hash = "##{pageSlug}"
+      return false
+
+  window.fancyPanels.currentHash = pageSlug
 

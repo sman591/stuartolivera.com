@@ -128,7 +128,7 @@
   };
 
   jQuery.fn.fancyPanels = function() {
-    var centerHomepage, firstHash, newHash, panels, params, possibleHashes, that, _i, _len, _ref;
+    var centerHomepage, firstHash, hashMatches, modalSlug, pageSlug, panels, params, possibleHashes, that, _i, _len, _ref;
 
     if (window.fancyPanels === void 0) {
       window.fancyPanels = [];
@@ -145,7 +145,9 @@
     } else {
       firstHash = false;
     }
-    newHash = window.location.hash.split('#')[1] || '';
+    hashMatches = window.location.hash.match(/(#(\w+))(-(\w+))?/) || [];
+    pageSlug = hashMatches[2] || false;
+    modalSlug = hashMatches[4] || false;
     possibleHashes = [];
     _ref = $(this);
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -154,7 +156,7 @@
         possibleHashes.push($(panels).data('hash'));
       }
     }
-    window.fancyPanels.homepage = newHash === 'home' || newHash === '' || $.inArray(newHash, possibleHashes) === -1;
+    window.fancyPanels.homepage = pageSlug === 'home' || pageSlug === '' || $.inArray(pageSlug, possibleHashes) === -1;
     centerHomepage = function() {
       if (window.fancyPanels.homepage) {
         return $('.main').css('margin-right', $('.main').getHorizontalCenterOffset());
@@ -173,6 +175,7 @@
         $('.stripes').fadeIn(1600);
       }
     }
+    $('.modals > .modal:visible').modal('hide');
     if (window.fancyPanels.homepage) {
       if (!firstHash) {
         $('.main').clearQueue();
@@ -188,17 +191,23 @@
         "margin-right": "0px"
       }, 1600, 'swing');
     }
-    if ($.inArray(newHash, possibleHashes) === -1) {
+    if ($.inArray(pageSlug, possibleHashes) === -1) {
       $('html, body').animate({
         scrollTop: 0
       }, 1600, 'swing');
-    } else if ($(window).scrollTop() !== $("[data-hash=" + newHash + "]").offset().top || window.fancyPanels.currentHash !== newHash) {
+    } else if ($(window).scrollTop() !== $(".panels [data-hash=" + pageSlug + "]").offset().top || window.fancyPanels.currentHash !== pageSlug) {
       $('html, body').clearQueue();
       $('html, body').animate({
-        scrollTop: $("[data-hash=" + newHash + "]").offset().top
+        scrollTop: $(".panels [data-hash=" + pageSlug + "]").offset().top
       }, 1600, 'swing');
     }
-    return window.fancyPanels.currentHash = newHash;
+    if (modalSlug && $(".modals [data-hash=" + modalSlug + "]") !== void 0) {
+      $(".modals [data-hash=" + modalSlug + "]").modal('show').on('hidden', function() {
+        window.location.hash = "#" + pageSlug;
+        return false;
+      });
+    }
+    return window.fancyPanels.currentHash = pageSlug;
   };
 
 }).call(this);
