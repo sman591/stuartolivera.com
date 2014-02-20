@@ -1,5 +1,6 @@
 .DS_Store
 .sass-cache
+Gemfile.lock
 public/bgcolor
 public/blog
 public/clients
@@ -7,3 +8,4 @@ public/invoices
 public/previewer
 public/share
 public/webcam
+vendor/
