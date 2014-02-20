@@ -103,9 +103,9 @@
 
           %img.headshot{:src => "images/stuart.jpg"}
 
-          %p Hey, I'm <span>Stuart</span>! I'm 18 years old and love to <span>design</span> &amp; <span>build</span> websites. I've had 7 years of experience with websites, along with 5 years of experience with commercial work.
+          %p Hey, I'm <span>Stuart</span>! ! I'm 18 years old and have a growing passion for  <span>designing</span> &amp; <span>building</span> fantastic websites.
 
-          %p A few of the languages I'm familiar with include <span>PHP</span>, <span>MySQL</span>, <span>JavaScript</span>, <span>CoffeeScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>HTML</span>, <span>LESS</span>, <span>SASS</span>, <span>Ruby</span>, <span>Rails</span>, <span>MongoDB</span>, and <span>Backbone.js</span>. This list continues to grow along with my skillset.
+          %p I've worked with a variety of languages and frameworks over the past 7 years, including:  <span>PHP</span>, <span>MySQL</span>, <span>JavaScript</span>, <span>jQuery</span>, <span>CSS</span>, <span>HTML</span>, <span>Ruby on Rails</span>, <span>MongoDB</span>, and <span>Backbone.js</span>. (<a href="#about-languages">view full list</a>)
 
           %p I live in the <span>Northern Virginia</span> area, but this doesn't limit me to who I can work with! Anyone from around the world that speaks English can request my <a href="#services">services</a>.
 
@@ -113,21 +113,19 @@
 
           %p My portfolio can be accessed <a href="http://www.behance.net/stuartolivera">here &raquo;</a>
 
-          %p If you're into open source, check out my <a href="http://github.com/sman591">GitHub profile &raquo;</a>
+          %p
+            If you're into open source, check out my <a href="http://github.com/sman591">GitHub profile &raquo;</a>
+            %br (<a href="http://github.com/sman591/stuartolivera.com">this website</a> is up there, too!)
 
         .services{ :data => { :hash => "services" } }
 
-          %h2 Design
+          %h2 Web Design &amp; Development
 
-          %p Trying to put yourself out there as a new business? Need a new look for your old website? Maybe there's a new feature that just somehow isn't working well? You're in the right place. Whether it's a website, blog, app, etc., final products are fresh and visitor friendly.
+          %p Websites these days aren't just a compilation of text on a screen. Many factors play a key part in modern websites, from the base design to unique methods of user interaction.
 
-          %br/
+          %p Every piece of my work exemplifies quality time and effort to create a better internet experience for everyone, while still getting the word out.
 
-          %h2
-            Development &amp;
-            %span.regular{ :tooltip => "User Experience"} UX
-
-          %p Your website deserves to be unique and flawless. Everything I build focuses on optimal user experience while maintaining professional performance and stability. Custom applications, APIs, online registration systems, the whole nine yards.
+          %p None of this is a chore for me: I enjoy the challenges each project presents, letting my creativity and experience push each project to future standards.
 
         .contact{ :data => { :hash => "contact" } }
 
@@ -164,6 +162,55 @@
             .control-group.actions
               .controls
                 %button.btn.btn-primary{:type => "submit"} Send
+
+    .modals
+
+      .languages.modal.hide.fade{ :data => { :hash => "languages" } }
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+          %h3 Experience
+        .modal-body
+          .row-fluid
+            .span6
+              %p
+                %strong Languages:
+              %ul
+                %li HTML
+                %li CSS
+                %li JavaScript
+                %li PHP
+                %li Ruby
+                %li Java
+              %p
+                %strong Databases:
+              %ul
+                %li MySQL
+                %li MongoDB
+              %p
+                %strong Tools:
+              %ul
+                %li Git
+                %li Photoshop
+            .span6
+              %p
+                %strong Frameworks:
+              %ul
+                %li jQuery
+                %li Ruby on Rails
+                %li Backbone.js
+                %li Ember.js
+                %li WordPress
+                %li Bootstrap
+              %p
+                %strong Pre-Compilers:
+              %ul
+                %li SASS
+                %li LESS
+                %li Haml
+                %li CofeeScript
+
+        .modal-footer
+          %a.btn{:href => "#about"} Close
 
     .stripes
       %br/
