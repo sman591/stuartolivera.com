@@ -9,3 +9,7 @@ AddType application/octet-stream .m4v
 AddType application/octet-stream .pdf
 AddType application/octet-stream .mp3
 AddType application/octet-stream .aiff
+
+RewriteCond %{HTTP:CF-Visitor} !'"scheme":"http"'
+RewriteRule ^(.*)$ https://stuartolivera.com/( [L])
+
