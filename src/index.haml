@@ -41,7 +41,7 @@
 
     /[if (lt IE 9) & (!IEMobile)]
       %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-      %script{:src => "javascript/respond.min.js"}
+      %script{:src => "js/respond.min.js"}
 
     :javascript
       document.getElementsByTagName("html")[0].className = document.getElementsByTagName("html")[0].className.replace("no-js","js");
@@ -244,13 +244,13 @@
 
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
     :javascript
-      window.jQuery || document.write('<script src="javascript/jquery-1.10.1.min.js"><\/script>')
+      window.jQuery || document.write('<script src="js/jquery-1.10.1.min.js"><\/script>')
 
-    %script{:src => "javascript/jquery.ba-hashchange.min.js"}
-    %script{:src => "javascript/jquery.fittext.js"}
-    %script{:src => "javascript/jquery.form.min.js"}
-    %script{:src => "javascript/bootstrap.min.js"}
+    %script{:src => "js/jquery.ba-hashchange.min.js"}
+    %script{:src => "js/jquery.fittext.js"}
+    %script{:src => "js/jquery.form.min.js"}
+    %script{:src => "js/bootstrap.min.js"}
 
     -# Custom JS
 
-    %script{:src => "javascript/app.js"}
+    %script{:src => "js/app.js"}

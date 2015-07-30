@@ -26,4 +26,4 @@ Compile paths:
 
 * src/index.haml ~> public/index.html
 * src/stylesheets ~> public/css
-* src/javascripts ~> public/javascript
+* src/javascripts ~> public/js
