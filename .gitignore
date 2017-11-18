@@ -9,3 +9,4 @@ public/previewer
 public/share
 public/webcam
 vendor/
+.env
