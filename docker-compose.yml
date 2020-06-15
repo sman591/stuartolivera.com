@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: webdevops/php-apache:5.6
+    image: webdevops/php-apache:7.4
     ports:
       - "443:443"
     volumes:
