@@ -141,37 +141,8 @@
 
           %p Looking for my services? Have a question? Just want to chat? Here's the place to do just that.
 
-          %br/
-
-          %form#contactForm.form-horizontal{:action => "contact.php", :method => "post"}
-            .form_user
-              %label{:for => "username"} Username
-              %input{:type => "text", :name=> "username"}
-            .control-group
-              %label.control-label{:for => "contactName"} Name
-              .controls
-                %input#contactName{:type => "text", :name => "name", :placeholder => "Name"}
-            .control-group
-              %label.control-label{:for => "contactEmail"} Email
-              .controls
-                %input#contactEmail{:type => "text", :name => "email", :placeholder => "Email"}
-            .control-group
-              %label.control-label{:for => "contactSubject"} Subject
-              .controls
-                %select#contactSubject{:name => "subject"}
-                  %option Please choose...
-                  %option{:value => "Requesting Services"} Requesting Services
-                  %option{:value => "Requesting Support"} Requesting Support
-                  %option{:value => "I Have A Question"} I Have A Question
-                  %option{:value => "Just Want To Chat"} Just Want To Chat
-                  %option{:value => "Other"} Other
-            .control-group
-              %label.control-label{:for => "contactComments"} Comments
-              .controls
-                %textarea#contactName{:name => "comments", :placeholder => "Comments", :rows => "7"}
-            .control-group.actions
-              .controls
-                %button.btn.btn-primary{:type => "submit"} Send
+          %p
+            %a{ :href => "mailto:stuart@stuartolivera.com" } stuart@stuartolivera.com
 
     .modals
 
